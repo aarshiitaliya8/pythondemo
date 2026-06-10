@@ -1,6 +1,6 @@
 {
   "buildCommand": "python freeze.py",
-  "outputDirectory": ".",
+  "outputDirectory": "dist",
   "installCommand": "pip install -r requirements.txt",
-  "framework": "static"
+  "framework": "python"
 }
