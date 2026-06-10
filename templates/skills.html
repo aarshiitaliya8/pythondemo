@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Skills & Journey | Portfolio{% endblock %}
+
+{% block content %}
+<section class="skills-page">
+    <div class="section-header">
+        <span class="section-tag">Competencies</span>
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">A snapshot of my technological proficiencies and development methods.</p>
+    </div>
+
+    <div class="skills-split-layout">
+        <!-- Skills Bars -->
+        <div class="skills-column">
+            <h3 class="subsection-title"><i class="fa-solid fa-square-poll-vertical icon-blue"></i> Skill Proficiencies</h3>
+            <div class="skills-list">
+                {% for skill in skills %}
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">{{ skill.name }}</span>
+                        <span class="skill-percent">{{ skill.proficiency }}%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: {{ skill.proficiency }}%"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Experience/Education Timeline -->
+        <div class="timeline-column">
+            <h3 class="subsection-title"><i class="fa-solid fa-route icon-purple"></i> Professional Journey</h3>
+            <div class="timeline">
+                {% for item in timeline %}
+                <div class="timeline-item">
+                    <div class="timeline-dot {% if item.type == 'experience' %}dot-purple{% else %}dot-blue{% endif %}">
+                        <i class="fa-solid {% if item.type == 'experience' %}fa-briefcase{% else %}fa-graduation-cap{% endif %}"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">{{ item.year }}</span>
+                        <h4 class="timeline-title">{{ item.title }}</h4>
+                        <h5 class="timeline-subtitle">{{ item.subtitle }}</h5>
+                        <p class="timeline-details">{{ item.details }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

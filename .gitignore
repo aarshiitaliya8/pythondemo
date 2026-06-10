@@ -1,0 +1,21 @@
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Build Output
+dist/
+site/
+
+# Python Cache & Compiled Files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Editor & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

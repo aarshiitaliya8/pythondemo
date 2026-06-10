@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Projects Showcase | Portfolio{% endblock %}
+
+{% block content %}
+<section class="projects-section">
+    <div class="section-header">
+        <span class="section-tag">Showcase</span>
+        <h2 class="section-title">My Creative Workspace</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">A curated collection of backend engineering, web applications, and DevOps tooling.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        {% for cat in categories %}
+        <button class="filter-btn" data-filter="{{ cat | lower | replace(' ', '-') | replace('/', '-') }}">{{ cat }}</button>
+        {% endfor %}
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid" id="projects-grid">
+        {% for project in projects %}
+        <div class="project-card" data-category="{{ project.category | lower | replace(' ', '-') | replace('/', '-') }}">
+            <div class="card-border-glow {{ project.color_class }}"></div>
+            <div class="project-card-body">
+                <div class="project-header">
+                    <span class="project-category">{{ project.category }}</span>
+                    <div class="project-links">
+                        <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer" title="View Source Code" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                        <a href="{{ project.demo }}" target="_blank" rel="noopener noreferrer" title="View Live Demo" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                
+                <h3 class="project-title">{{ project.title }}</h3>
+                <p class="project-description">{{ project.description }}</p>
+                
+                <div class="project-tags">
+                    {% for tag in project.tags %}
+                    <span class="tag-badge">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

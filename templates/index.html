@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Developer Portfolio | Python Static Site{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <span class="badge-new">Now open to opportunities</span>
+            <h1 class="hero-title">Crafting Scalable <span class="highlight-gradient">Digital Solutions</span></h1>
+            <p class="hero-subtitle">
+                Hi, I'm a Software Engineer specializing in Python backends, reactive JavaScript frontends, and automated cloud deployments.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                    <span>View Projects</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="glow-orb orb-primary"></div>
+            <div class="glow-orb orb-secondary"></div>
+            <div class="code-card-glass">
+                <div class="card-header-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="code-editor-content">
+                    <pre><code><span class="keyword">class</span> <span class="class-name">Developer</span>:
+    <span class="keyword">def</span> <span class="func">__init__</span>(self):
+        self.name = <span class="string">"Khush"</span>
+        self.role = <span class="string">"Full Stack Engineer"</span>
+        self.skills = [<span class="string">"Python"</span>, <span class="string">"JS"</span>, <span class="string">"Cloud"</span>]
+        
+    <span class="keyword">def</span> <span class="func">deploy_site</span>(self, platform):
+        <span class="comment"># Deploying statically via SwiftDeploy</span>
+        print(<span class="string">f"Deploying portfolio to {platform}..."</span>)
+        <span class="keyword">return</span> <span class="string">"🚀 Success!"</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-item">
+            <h2 class="stat-number">15+</h2>
+            <p class="stat-label">Projects Completed</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="stat-number">4+</h2>
+            <p class="stat-label">Years of Experience</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="stat-number">99.9%</h2>
+            <p class="stat-label">Deployments Uptime</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="stat-number">5k+</h2>
+            <p class="stat-label">Commits Pushed</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Bridging Performance and Design</h2>
+        <div class="section-divider"></div>
+    </div>
+    
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+                I am a passionate developer who believes software should not only execute flawlessly but also provide an exceptional user experience. By combining robust backend engineering in **Python** with expressive styles in **CSS/HTML**, I build websites that load instantly and respond dynamically.
+            </p>
+            <p>
+                This portfolio is built as a static Python site. It renders templates dynamically during development and generates highly optimized static web pages for production hosting. It is built to demonstrate how standard Python static assets can be deployed onto leading cloud servers using automation tools like **SwiftDeploy**.
+            </p>
+        </div>
+        
+        <div class="about-grid">
+            <div class="grid-card">
+                <i class="fa-solid fa-bolt card-icon icon-purple"></i>
+                <h3>Fast Loading</h3>
+                <p>Zero server processing lag. Assets are compiled statically and served immediately via global CDN networks.</p>
+            </div>
+            <div class="grid-card">
+                <i class="fa-solid fa-circle-check card-icon icon-blue"></i>
+                <h3>Reliable Hosting</h3>
+                <p>Static sites have zero operational server failures, providing maximum server reliability and security.</p>
+            </div>
+            <div class="grid-card">
+                <i class="fa-solid fa-mobile-screen card-icon icon-gold"></i>
+                <h3>Responsive UI</h3>
+                <p>Designed with fluid layouts to adjust seamlessly to small mobile devices and ultrawide screens alike.</p>
+            </div>
+            <div class="grid-card">
+                <i class="fa-solid fa-gears card-icon icon-red"></i>
+                <h3>CI/CD Hooked</h3>
+                <p>Automated build processes push changes live to your staging environments upon git push events.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
